@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Bookfactory</title>
+</head>
+<body>
+    <header id="header">
+        <img src="./foto/reading kid.jpg" alt="Reading Kid" id="reading-kid" style="width:6%">
+        <img src="./foto/download.png" alt="Book Factory" id="book-factory" style="width:30%">
+        <nav id="nav-bar">
+            <a href="#about">ABOUT US/ START</a>
+            <a href="#quizzes">QUIZZES</a>
+            <a href="#search">SEARCH</a>
+        </nav>
+    </header>
+    <div>
+        <section id="about">
+            <h1>About us</h1>
+            <p>Welcome to our website. Here you can search for books and read a bit about the book you search about. There are books you can read it all. You can also do quizzes about a book. The quizzes are always about a whole Story. Have fun doing quizzes and reading books!</p>
+            <div class="slider">
+                <div class="slide">
+                    <img src="./foto/Heart-Book.jpg" alt="heart book" >
+                </div>
+                <div class="slide">
+                    <img src="./foto/books everywhere.jpg" alt="Image 2" style="height: 30%;">
+                </div>
+                <div class="slide">
+                    <img src="./foto/bookis.jpg" alt="Image 3" >
+                </div>
+            </div>
+            <div class="navigation-button">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+    </div>
+    <section id="popular-books">
+        <h2>Popular Books for Big Children</h2>
+        <p>Here is where you can find popular books for big children.</p>
+        <div class="book-images">
+            <img src="./foto/har pot 1.jpg" alt="Harry Potter 1">
+            <img src="./foto/har pot 2.jpg" alt="Harry Potter 2">
+            <img src="./foto/har pot 6.jpg" alt="Harry Potter 6">
+            <img src="./foto/har pot 3.jpg" alt="Harry Potter 3">
+            <img src="./foto/har pot 7.jpg" alt="Harry Potter 7">
+            <img src="./Foto/dorkies 2.jpg" alt="Dorkies 2">
+            <img src="./Foto/dorkies 1.jpg" alt="Dorkies 1">
+            <img src="./Foto/dorkies 12.jpg" alt="Dorkies 12">
+            <img src="./Foto/dorkies 6.jpg" alt="Dorkies 6">
+        </div>
+    </section>
+    <section id="video">
+        <iframe width="703" height="395" src="https://www.youtube.com/embed/brp1usbA4_4" title="15 Most Impressive Libraries in the World" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+    <section id="subscribe">
+        <p>Subscribe for new books</p>
+        <button onclick="sayHello()">Click Me</button>
+        <div id="countdown"></div>
+        <form id="form" action="/">
+            <input type="email" id="email" placeholder="Type your email here">
+            <input id="submit" type="submit" value="Subscribe NOW">
+        </form>
+    </section>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>
